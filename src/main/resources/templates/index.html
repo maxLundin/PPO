@@ -1,0 +1,94 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+    <title>Tasks</title>
+</head>
+<body>
+
+<h3>Select tasks</h3>
+<form method="GET" action="/filter-tasks">
+    <select th:name="filter">
+        <option value="All">All</option>
+        <option value="Completed">Completed</option>
+        <option value="Uncompleted">Uncompleted</option>
+    </select>
+    <input type="submit" value="filter">
+</form>
+
+<table>
+    <tr>
+        <td th:text="ListName"/>
+        <td th:text="ID"/>
+        <td th:text="NAME"/>
+        <td th:text="DESCRIPTION"/>
+    </tr>
+
+    <th:block th:each="task : ${tasks}">
+        <tr>
+            <td th:text="${task.getList()}"/>
+            <td th:text="${task.getId()}"/>
+            <td th:text="${task.getName()}"/>
+            <td th:text="${task.getDescription()}"/>
+        </tr>
+    </th:block>
+</table>
+
+<h3>Add new list</h3>
+<form th:object="${list}" method="POST" action="/add-list">
+    <table>
+        <tr>
+            <td><label>List name:</label></td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="add">
+</form>
+
+<h3>Add new tasks</h3>
+<form th:object="${task}" method="POST" action="/add-tasks">
+    <table>
+        <tr>
+            <td><label>Name:</label></td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td><label>Description:</label></td>
+            <td><input type="text" th:field="*{description}"/></td>
+        </tr>
+        <tr>
+            <td><label>List:</label></td>
+            <td><input type="text" th:field="*{list}"/></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="add">
+</form>
+
+
+<h3>Complete task</h3>
+<form th:object="${task}" method="POST" action="/complete-task">
+    <table>
+        <tr>
+            <td><label>Id:</label></td>
+            <td><input type="number" th:field="*{id}"/></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="complete">
+</form>
+
+<h3>Complete list</h3>
+<form th:object="${list}" method="POST" action="/complete-list">
+    <table>
+        <tr>
+            <td><label>Name:</label></td>
+            <td><input type="text" th:field="*{name}"/></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="complete">
+</form>
+
+</body>
+</html>
