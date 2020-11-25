@@ -11,9 +11,6 @@ import ru.lundin.tasks.logic.DataFilter;
 import ru.lundin.tasks.model.Filter;
 import ru.lundin.tasks.model.Task;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
