@@ -19,14 +19,6 @@ public class NumberToken implements Token {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        NumberToken that = (NumberToken) o;
-        return number == that.number;
-    }
-
-    @Override
     public void accept(TokenVisitor visitor) {
         visitor.visit(this);
     }
