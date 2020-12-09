@@ -7,10 +7,6 @@
     <groupId>ru.lundin.tasks</groupId>
     <artifactId>Tasks</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>TaskManager</module>
-        <module>ReversePolishNotation</module>
-    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
