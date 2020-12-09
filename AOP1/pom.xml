@@ -13,7 +13,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.source-target.version>1.8</java.source-target.version>
         <aspectj.version>1.8.4</aspectj.version>
-        <spring.version>5.2.6.RELEASE</spring.version>
     </properties>
 
     <dependencies>
